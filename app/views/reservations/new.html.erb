@@ -1,0 +1,15 @@
+<h1>Yeni Rezervasyon Oluştur</h1>
+
+<p>
+  <span style="background: #b3696a; padding: 5px; margin-right: 10px"><%= link_to '<< Geri Dön', customer_path(@customer), style: 'color:#fff; text-decoration: none' %> </span>
+</p>
+
+
+<p>
+
+<span style="background: yellow; padding: 5px;">
+  <strong><%= @customer.name %> <%= @customer.surname %></strong> İsimli Müşteriye Rezervasyon Yapıyorsunuz.
+</span>
+</p>
+
+<%= render 'form' %>

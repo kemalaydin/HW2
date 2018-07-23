@@ -1,0 +1,27 @@
+<h1>Customers List</h1>
+<p>
+  <span style="background: #69b375; padding: 5px; margin-right: 10px"><%= link_to '+ Yeni Müşteri Ekle', new_customer_path , style: 'text-decoration: none; color: #000' %> </span>
+</p>
+<table border="1">
+  <tr>
+    <td>#</td>
+    <td>Adı - Soyadı</td>
+    <td>E-posta</td>
+    <td>Telefon</td>
+    <td></td>
+  </tr>
+
+  <% @customers.each do |customer| %>
+    <tr>
+      <td></td>
+      <td><%= customer.name %> <%= customer.surname %></td>
+      <td><%= customer.email %></td>
+      <td><%= customer.phone %></td>
+      <td>
+        <%= link_to 'Göster', customer_path(customer) %>
+        <%= link_to 'Düzenle', edit_customer_path(customer) %>
+        <%= link_to 'Sil', customer_path(customer), method: :delete, data: { confirm: 'Silmek istediğinize emin misiniz ? ' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

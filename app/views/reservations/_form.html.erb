@@ -1,0 +1,9 @@
+<%= form_with(model: [ @customer, @customer.reservations.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :date %><br>
+    <%= form.text_field :date , placeholder: 'dd.mm.yyyy'%>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
